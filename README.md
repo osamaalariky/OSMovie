@@ -29,6 +29,7 @@ OSMovie is a mobile application developed using React Native and TypeScript, des
 - **AsyncStorage**: Used for storing user preferences and session data locally.
 - **ApiSauce**: Simplifies Axios communication with TMDB API for fetching and sending data.
 - **Iconsax**: Provides icons used throughout the user interface for visual enhancements.
+- **react-native-dotenv**: Manages environment variables.
 
 ## Setup and Running the Project
 
@@ -39,6 +40,7 @@ OSMovie is a mobile application developed using React Native and TypeScript, des
 ## Additional Notes
 
 - Ensure you have a valid API key from TMDB to interact with the database.
+- Ensure you have the `.env` file at the root with the following content and use your own API_KEY:
 
 # Getting Started
 

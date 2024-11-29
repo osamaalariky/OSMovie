@@ -10,7 +10,7 @@ interface ApiResponse<T> {
 
 export const fetchAccountId = async (sessionId: string): Promise<AccountResponse> => {
 
-    const url = `/account?api_key=8e50b73b695ccb38792dd13f74e50b4d&session_id=${sessionId}`;
+    const url = `/account?api_key=${process.env.API_KEY}&session_id=${sessionId}`;
     const response = await apiClient.get<ApiResponse<AccountResponse>>(url);
 
     if (response.ok && response.data) {

@@ -1,5 +1,45 @@
 This is a new [**React Native**](https://reactnative.dev) project, bootstrapped using [`@react-native-community/cli`](https://github.com/react-native-community/cli).
 
+# OSMovie App
+
+OSMovie is a mobile application developed using React Native and TypeScript, designed to interact with The Movie Database (TMDB) API. The app allows users to explore trending movies, manage personal watchlists, and interact with movie details including posting and deleting ratings.
+
+## Features
+
+- **Login**: Users can log in using credentials registered on www.themoviedb.org.
+- **Dashboard**: Displays a list of trending movies, which updates regularly based on TMDB data.
+- **Search Functionality**: Allows users to search for movies by title within TMDB's extensive database.
+- **Movie Details and Ratings**:
+  - View detailed information about each movie including descriptions, release dates, and user ratings.
+  - Post new ratings for movies.
+  - Delete existing ratings.
+- **Watchlist**:
+  - Add movies to a personal watchlist.
+  - View a list of movies in the watchlist.
+- **Profile**:
+  - Display user profile information.
+  - Logout functionality to securely exit the app.
+
+## Technologies Used
+
+- **React Native**: Used for building the mobile application, providing a native feel with cross-platform capabilities.
+- **TypeScript**: Enhances development experience with static type definitions.
+- **Context API**: Manages the global state of user authentication and session management.
+- **React Navigation**: Handles navigation between different screens and states within the app.
+- **AsyncStorage**: Used for storing user preferences and session data locally.
+- **ApiSauce**: Simplifies Axios communication with TMDB API for fetching and sending data.
+- **Iconsax**: Provides icons used throughout the user interface for visual enhancements.
+
+## Setup and Running the Project
+
+1. **Clone the repository**:
+2. **Install dependencies**:
+   by running `npm install` or `yarn install` in your terminal.
+
+## Additional Notes
+
+- Ensure you have a valid API key from TMDB to interact with the database.
+
 # Getting Started
 
 > **Note**: Make sure you have completed the [React Native - Environment Setup](https://reactnative.dev/docs/environment-setup) instructions till "Creating a new application" step, before proceeding.
@@ -67,6 +107,10 @@ You've successfully run and modified your React Native App. :partying_face:
 # Troubleshooting
 
 If you can't get this to work, see the [Troubleshooting](https://reactnative.dev/docs/troubleshooting) page.
+
+## Developer
+
+Developed by Osama Alariky
 
 # Learn More
 

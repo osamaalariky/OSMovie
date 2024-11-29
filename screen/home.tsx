@@ -7,6 +7,7 @@ import { latestMovies } from '../api/latestMovie';
 import MovieCard from '../components/Card';
 import Searching from '../components/Searching';
 import { fetchWatchlist } from '../api/watchListApi';
+import { useNavigation } from '@react-navigation/native';
 
 interface DropdownItem {
     label: string;
@@ -16,6 +17,7 @@ interface DropdownItem {
 const MAX_ITEMS_PER_PAGE = 20;
 
 export default function HomeScreen() {
+    const navigation = useNavigation()
     const [page, setPage] = useState(1);
     const [timeWindow, setTimeWindow] = useState('week');
     const [listings, setListings] = useState<Movie[]>([]);
@@ -31,18 +33,31 @@ export default function HomeScreen() {
     ];
 
     const fetchMovies = async () => {
-        if (!hasMore || isFetching) return;
+        if (isFetching || !hasMore) return; 
         setIsFetching(true);
-        const response: ApiResponse<Movie[]> = await latestMovies(page, timeWindow);
-        
+        const response = await latestMovies(page, timeWindow);
         if (response.ok && response.data.length) {
             setListings(prev => [...prev, ...response.data]);
+            setPage(prevPage => prevPage + 1);
             setHasMore(response.data.length === MAX_ITEMS_PER_PAGE);
         } else {
             setHasMore(false);
         }
         setIsFetching(false);
     };
+    
+    useEffect(() => {
+        fetchMovies(); 
+    }, [timeWindow]); 
+    
+    useEffect(() => {
+        const unsubscribe = navigation.addListener('focus', () => {
+            setPage(1); 
+            setListings([]); 
+        });
+    
+        return unsubscribe;
+    }, [navigation]); 
 
     const loadWatchlist = async () => {
         const response = await fetchWatchlist(); 
@@ -53,9 +68,8 @@ export default function HomeScreen() {
     };
 
     useEffect(() => {
-        fetchMovies();
         loadWatchlist();
-    }, [timeWindow, page]);
+    }, [ page]);
 
     const handleTimeWindowChange = (item: DropdownItem) => {
         setTimeWindow(item.value);

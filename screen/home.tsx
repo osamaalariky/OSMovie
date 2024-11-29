@@ -51,13 +51,12 @@ export default function HomeScreen() {
     }, [timeWindow]); 
     
     useEffect(() => {
-        const unsubscribe = navigation.addListener('focus', () => {
+       
             setPage(1); 
             setListings([]); 
-        });
-    
-        return unsubscribe;
-    }, [navigation]); 
+            
+       
+    }, []); 
 
     const loadWatchlist = async () => {
         const response = await fetchWatchlist(); 
@@ -69,6 +68,7 @@ export default function HomeScreen() {
 
     useEffect(() => {
         loadWatchlist();
+
     }, [ page]);
 
     const handleTimeWindowChange = (item: DropdownItem) => {

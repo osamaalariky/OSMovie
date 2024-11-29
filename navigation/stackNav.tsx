@@ -28,7 +28,7 @@ const profileStack = React.memo((props) => {
     return (
   
           <Stack.Navigator initialRouteName={routes.PROFILE}>
-              <Stack.Screen name={routes.PROFILE} component={Profile} options={{ headerTitle: 'Details' }} />
+              <Stack.Screen name={routes.PROFILE} component={Profile} options={{headerShown: false}} />
               <Stack.Screen name={routes.WATCHLIST} component={WatchListScreen} options={{ headerTitle: 'Details' }} />
               <Stack.Screen name={routes.RatedList} component={RatedListScreen} options={{ headerTitle: 'Details' }} />
               <Stack.Screen name={routes.MOVIEDETAILS} component={MovieDetails} options={{ headerTitle: 'Details' }} />

@@ -11,7 +11,10 @@ const TabNav = React.memo(() => {
   return (
 
 
-<Tab.Navigator initialRouteName={routes.HOME}>
+<Tab.Navigator initialRouteName={routes.HOME} screenOptions={{
+        headerShown: false,
+      
+      }}>
 
 <Tab.Screen 
   name={routes.HOME} 
@@ -23,6 +26,7 @@ const TabNav = React.memo(() => {
   }}
 />
        <Tab.Screen name={routes.PROFILETAB} component={profileStack} options={{ 
+        
     tabBarIcon: ({ color, size }) => (
       <ProfileCircle size={size} color={Colors.primary}/>
     )

@@ -82,7 +82,7 @@ const ProfileScreen = () => {
 
 const styles = StyleSheet.create({
     container: {
-        paddingTop: 20,
+        paddingTop: 50,
     padding: 14,
     },
     avatar: {
@@ -128,7 +128,7 @@ const styles = StyleSheet.create({
       buttonContainer: {
         width: '100%',
         paddingHorizontal: 20,
-        marginTop: 100
+        marginTop: 150
     },
     button: {
         flexDirection: 'row',

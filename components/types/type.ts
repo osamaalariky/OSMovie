@@ -80,14 +80,12 @@ export type RootStackParamList = {
   RatedList: undefined;
 
 };
-
-export type MovieDetailsRouteParams = {
-    movieId: number;
-  };
   
   export type MovieDetailsProps = {
     route: {
-      params: MovieDetailsRouteParams;
+        params: {
+            movieId: number;
+        };
     };
   };
   export interface Review {
